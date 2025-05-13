@@ -1,0 +1,129 @@
+.cts-product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cts-product-thumbnail {
+    width: 100%;
+}
+
+.cts-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cts-product-info {
+    padding: 16px;
+}
+
+.cts-product-title {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cts-product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+}
+
+.cts-product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cts-product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+.cts-product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars {
+    color: #ffc107;
+    letter-spacing: 2px;
+}
+
+.rating-count {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+
+
+.cts-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    grid-column: m1-end / m2-start;
+}
+
+.cts-error {
+    color: red;
+    font-size: 1.5rem;
+    grid-column: m1-end / m2-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
+.cts-rating {
+    --size: 1rem;
+    --mask: conic-gradient(from -18deg at 61% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
+    conic-gradient(from 270deg at 39% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
+    conic-gradient(from 54deg at 68% 56%, #0000 108deg, #000 0) 0 / var(--size),
+    conic-gradient(from 198deg at 32% 56%, #0000 108deg, #000 0) 0 / var(--size),
+    conic-gradient(from 126deg at 50% 69%, #0000 108deg, #000 0) 0 / var(--size);
+    --bg: linear-gradient(90deg, #FFE234 calc(var(--size) * var(--val)), #ddd 0);
+    height: var(--size);
+    width: calc(var(--size) * 5);
+    border: 0; /* Firefox adds a default border to ranges */
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* Chrome and Safari */
+    &::-webkit-slider-runnable-track {
+        height: 100%;
+        mask: var(--mask);
+        mask-composite: intersect;
+        background: var(--bg);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    &::-webkit-slider-thumb {
+        opacity: 0;
+    }
+
+    /* Firefox */
+    &::-moz-range-track {
+        height: 100%;
+        mask: var(--mask);
+        mask-composite: intersect;
+        background: var(--bg);
+        print-color-adjust: exact;
+    }
+
+    &::-moz-range-thumb {
+        opacity: 0;
+    }
+}
